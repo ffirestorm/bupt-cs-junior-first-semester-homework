@@ -1,0 +1,16 @@
+Nov 19 09:09:39.919 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 19 09:09:39.922 HYPERVISOR: Started on TCP port = 58371.
+Nov 19 09:09:40.143 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 19 09:09:40.144 HYPERVISOR: exec_cmd: hypervisor working_dir E:\bupt-homework\computer-network\VLAN\VLAN-lab4\project-files\dynamips 
+Nov 19 09:09:40.148 GENERAL: working_dir=E:\bupt-homework\computer-network\VLAN\VLAN-lab4\project-files\dynamips
+Nov 19 09:09:40.148 HYPERVISOR: exec_cmd: ethsw create Switch1 
+Nov 19 09:09:45.335 HYPERVISOR: exec_cmd: nio create_udp udp-4f577191-d99e-4d8a-8dd6-6b163875b344 10000 192.168.177.1 10001 
+Nov 19 09:09:45.336 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-4f577191-d99e-4d8a-8dd6-6b163875b344 
+Nov 19 09:09:45.345 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-4f577191-d99e-4d8a-8dd6-6b163875b344 2 
+Nov 19 09:09:45.380 HYPERVISOR: exec_cmd: nio create_udp udp-58445ce7-25d2-4cc4-8487-cac10e8fd638 10002 192.168.177.1 10003 
+Nov 19 09:09:45.380 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-58445ce7-25d2-4cc4-8487-cac10e8fd638 
+Nov 19 09:09:45.407 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-58445ce7-25d2-4cc4-8487-cac10e8fd638 2 
+Nov 19 09:09:45.630 HYPERVISOR: exec_cmd: ethsw delete Switch1 
+Nov 19 09:09:45.685 HYPERVISOR: exec_cmd: hypervisor stop 
+Nov 19 09:09:45.730 HYPERVISOR: Stopped.
+Nov 19 09:09:45.730 GENERAL: reset done.

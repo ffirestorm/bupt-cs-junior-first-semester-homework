@@ -1,0 +1,346 @@
+
+           SecureCRT(R) 6.5 (Official) -- December 10, 2009
+
+            Copyright (C) 1995-2009 VanDyke Software, Inc.
+                        All rights reserved.
+
+
+This file contains a SecureCRT product history.  It includes lists 
+of new features, changes, and bug fixes sorted by release.  For a 
+product description, installation notes, registration information,
+and contact information, please refer to Readme.txt (downloaded 
+with this installation).
+
+
+Changes in SecureCRT 6.5 (Official) -- December 10, 2009
+--------------------------------------------------------
+
+Bug fixes:
+
+  - SecureCRT could crash if the application's Close button was
+    pressed more than once.
+  - If a key was mapped to a string that contained "\p" (pause),
+    SecureCRT crashed when the key was pressed in the terminal
+    window.
+
+
+Changes in SecureCRT 6.5 (Beta 5) -- December 3, 2009
+-----------------------------------------------------
+
+Bug fixes:
+
+  - If a .XML custom menu and toolbar file contained a menu on
+    the toolbar, SecureCRT crashed when trying to import it into
+    version 6.5.
+  - SecureCRT could crash if text was double clicked while session
+    output was scrolling and was more likely to occur if the
+    scrollback lines were set to 0.
+  - If invalid parameters were passed into the script function
+    Screen.Get2, SecureCRT crashed.
+  - On Windows 7, if the Global.ini option "Disable Aero Peek" was
+    enabled and an Auto session was specified, SecureCRT crashed on
+    start up.
+  - On Windows 7 and Vista, if the option "Only show tabs when
+    there are more than one" was set and a session was connected
+    and then that session and another were opened in a new window,
+    the first session shrunk by two rows.
+  - If the global option "Only show tabs when there are more than
+    one" was set and a second session was connected, the tab status
+    indicator for the first session showed that it was disconnected
+    even though it was connected.
+  - When "ANSI Color" was off, some of the vttest "double-sized
+    characters" tests did not display correctly for VT100 sessions.
+  - If the SecureCRT cursor was blinking or there was blinking text
+    displayed in the session and a menu was activated, the cursor
+    and text stopped blinking.
+  - If a column selection was made, after releasing the ALT key,
+    focus switched to the menu.
+  - If two SecureCRT windows were open in separate processes, if
+    the display theme was changed, the toolbar was not always
+    updated to the new theme in the other windows.
+  - The script function Screen.Get2 only returned the first
+    character.
+
+
+Changes in SecureCRT 6.5 (Beta 4) -- November 11, 2009
+------------------------------------------------------
+
+Changes:
+
+  - Added a Global.ini-file-only option to disable the Windows 7
+    Aero task bar peek functionality.
+  - Added a Global.ini-file-only option to put the close button
+    to the right of the tab bar rather than on the active tab.
+
+Bug fixes:
+
+  - If a session was connected to a remote server that was the DNS
+    server and the remote server went down, SecureCRT could crash.
+  - Fixed a GDI resource leak.
+  - Ymodem transfers could fail because SecureCRT did not send and
+    honor the file length in the file header packet.
+  - If a key was mapped to send a string and that key was pressed in
+    the chat window, the first character of the string was not sent.
+  - If SecureCRT was not active and the most recently used tab was
+    clicked, SecureCRT did not become active.
+  - Pressing CTRL+TAB with multiple tabs open did not always switch
+    to the most recently used tab.
+  - If the display theme was set to Black, Aqua, or Silver, after
+    coming out of hibernation, the display theme was changed to Blue.
+  - If the tab status indicators used the "Background colors" option,
+    the active tab was closed, and it had a different status than the
+    newly active tab, then the newly active tab did not have the
+    correct background color behind the close tab button.
+
+
+Changes in SecureCRT 6.5 (Beta 3) -- October 29, 2009
+-----------------------------------------------------
+
+Changes:
+
+  - Restored previous behavior of allowing the password to be saved
+    regardless of the "Auto Save Options" setting.
+
+Bug fixes:
+
+  - It was possible for SecureCRT to crash when attempting to select
+    text near the end of a line.
+  - SecureCRT could crash when configuring a private key for a
+    session.
+  - SecureCRT could crash when a tab was closed if the Session
+    Options dialog had been opened after connecting to a session.
+  - If the INI-file only option "Force Close On Exit" was set and
+    an SSH2 session was connected and cloned, if one of the tabs was
+    closed, SecureCRT crashed on exit.
+  - Displaying certain Unicode sequences could cause SecureCRT to
+    hang.
+  - Scrolling Unicode data was much slower than scrolling non-Unicode
+    data.
+  - The underscore character was included in the list of default
+    delimiters.
+  - If the user had full write access to the root drive and
+    attempted to log to a file in the root drive, an "Access Denied"
+    error was reported.
+  - Send ASCII ignored the end-of-line characters if the text file
+    contained end-of-line characters other than CRLF.
+  - Clicking the red "X" in the Windows 7 taskbar peek for SecureCRT
+    did not close SecureCRT.
+  - On Windows 7, if ANSI color was on and a tab subsequent to the
+    first tab was connected, the terminal area in the new tab
+    flickered, briefly showing lines of different colors.
+  - When the JAWS screen reading software was used in cursor mode,
+    if output that contained blank lines was displayed in SecureCRT,
+    using the arrow keys to move the mouse cursor over the blank
+    lines caused the cursor to jump over several blank lines instead
+    of moving one line at a time.
+  - After upgrading to 6.5, if a custom menu and toolbar XML file
+    from version 6.2 or earlier existed, the ALT+B accelerator to
+    connect in a tab no longer worked.
+  - If the global option "Show confirm disconnect dialog" was off
+    and a session was connected and cloned, then the cloned session
+    was closed using the close button on the tab, window decorations
+    such as menus and toolbar buttons did not receive focus when
+    mousing over them.
+  - Output that did not wrap when printed under Windows XP wrapped
+    when printed under Windows 7 and Vista.
+  - Bold characters were not printed as bold characters.
+  - SSH2: Attempting to use a private key without a corresponding
+    public key caused SecureCRT 6.5 beta 2 to crash.
+  - SFTP: SecureCRT could crash when downloading a directory that
+    contained thousands of files.
+
+
+Changes in SecureCRT 6.5 (Beta 2) -- October 15, 2009
+-----------------------------------------------------
+
+New features:
+
+  - The chat window can be resized by dragging the splitter bar.
+
+Changes:
+
+  - SSH2: When an RSA key is used for authentication, only the
+    private key is required, which makes it easier to use Amazon
+    EC2 keys.
+  - If a custom menu (.mnu) file specifies the "Office 2007" theme,
+    which is not available in SecureCRT 6.5, the "Office 2003" theme
+    is put in the menu instead.
+
+Bug fixes:
+
+  - If the Activator was exited while the Global Options dialog was
+    open, SecureCRT crashed.
+  - SecureCRT crashed if a session that specified a non-existent
+    keymap was cloned or opened a second time.
+  - If the /NOMENU option was specified on the command line, a
+    "Failed to create empty document" error was reported.
+  - For Ymodem transfers, 128-byte packets were sent when Ymodem-1k
+    option was specified.
+  - The Delete, Home, End, PageUp, and PageDown keys did not work in
+    the chat window.
+  - If the paste on middle button option was set and a middle button
+    press was simulated by pressing the left and right mouse buttons
+    together, the context menu was displayed.
+  - If the tab bar was not displayed when SecureCRT started and then
+    a session was connected and the tab bar was displayed, the status
+    indicator icon did not have the correct status.
+  - When the status indicators were shown as background colors, if
+    there were more tabs than could fit across the window and a tab
+    was closed, the tab bar was not redrawn correctly.
+  - If the toolbar was changed to a custom toolbar and then back to
+    the default toolbar, the "Toolbar Options" drop-down arrow was
+    no longer displayed.
+  - If a custom menu (.mnu) file was specified and SecureCRT was
+    restarted, then the custom menu was cleared and SecureCRT was
+    restarted, the toolbar icons were not displayed correctly.
+  - It was possible to close a locked session from the Windows 7
+    taskbar.
+  - If SecureCRT was minimized, the thumbnail in the Windows 7
+    taskbar displayed a busy circle until it eventually failed to
+    get a thumbnail bitmap and displayed a default icon. 
+  - If SecureCRT connected to multiple sessions at start up and then
+    was minimized, the Windows 7 taskbar only contained a
+    thumbnail image for one of the tabbed sessions.
+
+
+Changes in SecureCRT 6.5 (Beta 1) -- October 1, 2009
+----------------------------------------------------
+
+New features:
+
+  - Unicode support was improved in the following areas: character
+    sets from multiple languages can be viewed in a session, display
+    of right-to-left reading order languages, UTF-8 characters can
+    be mapped in the Keymap Editor, Send/Receive ASCII works with
+    UTF-8 data, UTF-8 filenames can be used in the SFTP tab,
+    pass-through printing supports UTF-8 data, and better behavior
+    with scripts that use combining marks to compose characters.
+  - In the Session Options dialog, the list of character encodings
+    displays all the encodings supported by the system.
+  - Added an option that allows words to be specified in a list so
+    that they can be highlighted as they appear in the session.
+  - An inactivity status notification option can be set for tabbed
+    sessions so that activity can be monitored in tabbed sessions
+    other than the current session.
+  - There are new display settings for tab status indicators, which
+    are icons and tab background color.
+  - The tab bar position can be set to the bottom of the SecureCRT
+    window.
+  - When a session is locked, a locked icon is displayed on the tab
+    unless the "Color rectangles" status indicators are used.
+  - SecureCRT has several new Windows display themes.
+  - If a file is dragged from MS Explorer or other OLE-enabled
+    application into a connected SecureCRT session, it can be
+    transferred using ASCII, Xmodem, Ymodem, or Zmodem.
+  - Added a global option that allows URLs to be opened by
+    CTRL+clicking them.
+  - A new session option allows mouse wheel scroll events to be
+    sent to the remote application.
+  - A new script function GetActiveTab returns the currently active
+    tab.
+  - Added the ability to wait for a case insensitive string in a
+    script.  The functions WaitForString and WaitForStrings take an
+    optional parameter to specify that the case should be ignored.
+    Additionally, the property IgnoreCase has been added to the Screen
+    object so that this can be set globally.
+  - Added a script function SetStatusText that allows the status
+    bar text to be set from a script.
+  - The script functions SetOption and GetOption now allow encrypted
+    passwords to be used in a script.
+  - A command-line parameter /SESSION_FOLDER allows all the sessions
+    in a folder to be connected when SecureCRT starts.
+  - A command-line parameter /EncryptedPassword has been added, which
+    allows an encrypted password to be specified on the command line.
+  - SFTP: Dragging a file from MS Explorer or another OLE-enabled
+    application initiates a put command on the file.
+
+Changes:
+
+  - Increased scrolling performance when large amounts of text are
+    output to the session.
+  - The following changes were made to the button bar: only
+    configured buttons are displayed, the button width is determined
+    by the button label, and the button bar menu is now on the left
+    side of the bar.
+  - The "Semaphore timeout" error is now displayed in the session's
+    trace output instead of a message box.
+  - The maximum value that the global maximum columns option can be
+    set to is now 32,000.
+  - Modified the script function LogFileName so that if the log
+    filename contains parameter substitutions and logging is on,
+    the name of the file currently being logged to is returned.
+  - Added a "Start Upload" button to the Zmodem Upload List dialog.
+  - The character encoding restrictions on the vt100 font have been
+    removed.
+  - In the Map Selected Key dialog, pressing the Default button
+    removes the entry from the keymap file.
+  - In the Keymap Editor dialog, pressing ALT+O closes the dialog.
+  - The close button now appears on the tab itself instead of to the
+    right of the tab bar.
+  - Serial: The baud rate is now displayed in the status bar.
+
+Bug fixes:
+
+  - If data being sent using Send ASCII contained a null character,
+    nothing after the null character was sent.
+  - Zmodem transfers did not complete when attempting to download
+    a zero-byte file.
+  - The Xterm command "Use Alternate Screen Buffer" did not work.
+  - The anti-idle string was not sent when a session was locked.
+  - If a session was locked, the double-click tab action was still
+    honored.
+  - When a session was started from the Activator, the new session
+    window appeared behind other application windows.
+  - If a session without a username was edited while it was connected,
+    the username entered during authentication was saved to the
+    session.
+  - If multiple sessions were being edited and a port forward was
+    added or deleted, only the first session was modified.
+  - If one tabbed session was showing the button bar and another
+    tabbed session was not, then the second tab was moved to the
+    first position and then back and the window was resized, the
+    number of columns would increase when the mouse was released.
+  - The number of lines specified for the scrollback buffer of the
+    first tabbed session was also used for the other tabbed sessions.
+  - The "Upon Disconnect" custom log data was written twice to the
+    log file.
+  - Exiting Activator while a SecureCRT session was locked left a
+    SecureCRT process running that could only be accessed through
+    the Windows Task Manager.
+  - If the configuration folder's path had a trailing backslash,
+    sessions could not be connected from the Activator or from
+    SecureFX (if it was installed).
+  - When %I was specified as a variable in the title bar session
+    option, it was not replaced with the IP address.
+  - If the color scheme attributes were changed while the "ANSI color"
+    and "Use color scheme" options were set, the "Overstrike bold"
+    attribute was not changed.
+  - SecureCRT had to be restarted for ANSI color table changes to take
+    effect.
+  - The locked status of a tabbed session was not displayed correctly
+    in the status bar until the mouse moved over the toolbar or menu
+    bar, or the mouse was clicked in the session window.
+  - If a window other than SecureCRT had focus and Connect was
+    called from a script, the SecureCRT window could get focus.
+  - If the active tabbed session was disconnected, text could not
+    be pasted into the chat window.
+  - If the installer was run in silent mode and an answer file that
+    could not be found was specified on the command line, a dialog
+    was displayed.
+  - SecureCRT offered to make itself the default Telnet handler even
+    when the Telnet protocol DLL was not available.
+  - RLogin: Sending window size messages to the server when they had
+    not been requested could cause garbage to be displayed in the
+    session.
+  - Serial, TAPI: Zmodem transfers over Serial or TAPI did not switch
+    into and out of binary mode correctly, which could cause the
+    transfers to hang or transfer the same file repeatedly.
+  - Serial: When a button was mapped to send a string of non-printing
+    octal characters, the order of the characters was sometimes
+    swapped when they were sent. 
+  - SSH1/SSH2: In the Enter SSH Username dialog, if the Save
+    username check box was checked and the Auto Save Settings
+    option was off, the username was not saved.
+  - SSH2: In the Key Generation wizard, if the specified path for the
+    key contained two or more folders that did not exist, they key
+    could not be saved. 

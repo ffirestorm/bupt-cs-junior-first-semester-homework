@@ -1,0 +1,24 @@
+entry "初始"
+exit "3"
+
+state "初始"
+    response "您好"
+    when "1" state_transfer "1" response "初始状态跳转状态中"
+    when "2" state_transfer "2" response "初始状态跳转状态中"
+    when "3" state_transfer "3" response "初始状态跳转状态中"
+    wait 120
+state "1"
+    response "状态1"
+    when "2" state_transfer "2" response "1跳转状态中"
+    when "3" state_transfer "3" response "1跳转状态中"
+    wait 120
+state "2"
+    response "状态2"
+    when "3" state_transfer "3" response "2跳转状态中"
+    when "1" state_transfer "1" response "2跳转状态中"
+    wait 120
+state "3"
+    response "状态3"
+    when "1" state_transfer "1" response "3跳转状态中"
+    when "2" state_transfer "2" response "3跳转状态中"
+    wait 120

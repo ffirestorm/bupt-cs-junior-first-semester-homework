@@ -1,0 +1,10 @@
+Nov 19 09:09:41.333 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 19 09:09:41.335 HYPERVISOR: Started on TCP port = 58381.
+Nov 19 09:09:41.819 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 19 09:09:41.820 HYPERVISOR: exec_cmd: hypervisor working_dir E:\bupt-homework\computer-network\VLAN\VLAN-lab4\project-files\dynamips 
+Nov 19 09:09:41.820 GENERAL: working_dir=E:\bupt-homework\computer-network\VLAN\VLAN-lab4\project-files\dynamips
+Nov 19 09:09:41.821 HYPERVISOR: exec_cmd: ethsw create Switch6 
+Nov 19 09:09:45.630 HYPERVISOR: exec_cmd: ethsw delete Switch6 
+Nov 19 09:09:45.636 HYPERVISOR: exec_cmd: hypervisor stop 
+Nov 19 09:09:45.883 HYPERVISOR: Stopped.
+Nov 19 09:09:45.883 GENERAL: reset done.

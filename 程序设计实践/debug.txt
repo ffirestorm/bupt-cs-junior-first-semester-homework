@@ -1,0 +1,56 @@
+第二次小作业（排错）
+
+姓名：陈朴炎
+学号：2021211138
+班级：2021211307
+
+一、bug1：
+1、编译并运行，文件参数为 abd abcdabcdabcdabd 1，有如下问题：
+
+allpfirestorm@LAPTOP-O0JFQIE5:~/projects/bupt-homework/program-practice/debug$ ./kmp_bad abd abcdabcdabcdabd 1
+i = -1, so next[1] = 0
+p[1]:b != p[0]:a, so i(0) back to next[0](-1)
+i = -1, so next[2] = 0
+
+pattern:  a  b  d
+Segmentation fault
+
+结果显示主函数调用完build_next函数之后，在调用print_next函数时，遇到了段错误，这是在打印pattern数组之后，打印next数组之前发生的，因为已经打印中间的换行符，但还没打印"next:    "。
+
+2、查找bug
+我使用vscode+gdb进行调试，在配置文件中加入argc参数，"abd", "abcdabcdabcdabd", "2"； 打开调试，运行，代码运行到第54行：printf("%2d "，next[i])；处中断，查看next的值：0x0，代表next是一个空指针。在print_next函数中，next数组的参数值是由主函数传递进去的，主函数中的next值则是通过build_next函数返回的。
+而build_next函数中，它的返回值next指针是在函数内部定义的，而且是通过定义数组来声明：int next[256]，在c中，声明在函数内部的变量是会随着函数的销毁而释放的，所以最终返回主函数的其实就是被释放掉的指针，因此在print_next函数中才会出现段错误。
+
+3、修改bug
+将文件的第16行删去，替换为int * next;在下一行加上
+next = (int *)malloc(sizeof(int)*length);
+if(next == NULL){
+    return NULL;
+}
+这样动态的分配内存空间，就能防止next指针在函数返回时销毁了，同时我们动态分配了内存，在结束后也应该释放掉，所以在修改完后的文件第195行，也就是主函数"return 0;"的上一行加上
+free(next);
+来释放动态分配的空间，防止内存泄漏。
+
+二、bug2
+1、编译运行
+allpfirestorm@LAPTOP-O0JFQIE5:~/projects/bupt-homework/program-practice/debug$ ./kmp_bad abd abcdabcdabcdabd 1
+i = -1, so next[1] = 0
+p[1]:b != p[0]:a, so i(0) back to next[0](-1)
+i = -1, so next[2] = 0
+
+pattern:  a  b  d
+next:    -1  0  0  0
+
+输出如上所示，发现next数组怎么多输出了一个数字0。
+2、查找bug
+这个输出也是在print_next函数里出现的。因此我返回print_next函数中看，发现两个for循环的停止判断条件都是i<=length，但是pattern和next的长度只有length长，当下标为length时就发生数组越界了，也会造成段错误。因此应该把这两个判断条件改掉
+
+3、修改bug
+将print_next函数修改如下，修改了两个for循环的边界条件为i < length。
+   for(int i = 0; i < length; i++)
+      printf(" %c ", pattern[i]);
+   printf("\n");
+   printf("next:    ");
+   for(int i = 0; i < length; i++)
+      printf("%2d ", next[i]);
+
