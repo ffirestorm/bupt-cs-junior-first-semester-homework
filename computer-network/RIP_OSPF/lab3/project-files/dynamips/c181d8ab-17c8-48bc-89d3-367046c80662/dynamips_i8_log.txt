@@ -1,0 +1,42 @@
+Dec 05 13:10:25.076 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Dec 05 13:10:25.079 HYPERVISOR: Started on TCP port = 22894.
+Dec 05 13:10:25.574 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 05 13:10:25.575 HYPERVISOR: exec_cmd: hypervisor working_dir E:\bupt-homework\computer-network\RIP_OSPF\lab3\project-files\dynamips 
+Dec 05 13:10:25.575 GENERAL: working_dir=E:\bupt-homework\computer-network\RIP_OSPF\lab3\project-files\dynamips
+Dec 05 13:10:25.576 HYPERVISOR: exec_cmd: hypervisor working_dir E:\bupt-homework\computer-network\RIP_OSPF\lab3\project-files\dynamips\c181d8ab-17c8-48bc-89d3-367046c80662 
+Dec 05 13:10:25.576 GENERAL: working_dir=E:\bupt-homework\computer-network\RIP_OSPF\lab3\project-files\dynamips\c181d8ab-17c8-48bc-89d3-367046c80662
+Dec 05 13:10:25.576 HYPERVISOR: exec_cmd: vm create R8 8 c7200 
+Dec 05 13:10:25.579 VM: VM R8 created.
+Dec 05 13:10:25.580 HYPERVISOR: exec_cmd: vm set_con_tcp_port R8 5007 
+Dec 05 13:10:25.580 HYPERVISOR: exec_cmd: c7200 get_mac_addr R8 
+Dec 05 13:10:25.581 HYPERVISOR: exec_cmd: vm get_status R8 
+Dec 05 13:10:25.581 HYPERVISOR: exec_cmd: vm slot_add_binding R8 0 0 C7200-IO-FE 
+Dec 05 13:10:25.581 HYPERVISOR: exec_cmd: vm set_disk0 R8 0 
+Dec 05 13:10:25.582 HYPERVISOR: exec_cmd: vm set_exec_area R8 64 
+Dec 05 13:10:25.583 HYPERVISOR: exec_cmd: vm get_status R8 
+Dec 05 13:10:25.583 HYPERVISOR: exec_cmd: vm set_idle_pc R8 0x606df838 
+Dec 05 13:10:25.585 HYPERVISOR: exec_cmd: vm set_ios R8 C:/Users/20531/GNS3/images/IOS/c7200-adventerprisek9-mz.124-24.T5.image 
+Dec 05 13:10:25.586 HYPERVISOR: exec_cmd: c7200 set_mac_addr R8 ca08.4ef0.0000 
+Dec 05 13:10:25.586 HYPERVISOR: exec_cmd: vm set_nvram R8 512 
+Dec 05 13:10:25.587 HYPERVISOR: exec_cmd: vm set_ram R8 512 
+Dec 05 13:10:25.588 HYPERVISOR: exec_cmd: vm get_status R8 
+Dec 05 13:10:25.588 HYPERVISOR: exec_cmd: vm slot_remove_binding R8 0 0 
+Dec 05 13:10:25.589 HYPERVISOR: exec_cmd: vm get_status R8 
+Dec 05 13:10:25.589 HYPERVISOR: exec_cmd: vm slot_add_binding R8 0 0 C7200-IO-2FE 
+Dec 05 13:10:25.589 HYPERVISOR: exec_cmd: vm get_status R8 
+Dec 05 13:10:25.590 HYPERVISOR: exec_cmd: vm slot_add_binding R8 1 0 PA-8T 
+Dec 05 13:10:30.837 HYPERVISOR: exec_cmd: nio create_udp udp-e21253f7-d510-40d9-8d2c-fc1a4999a0c3 13062 127.0.0.1 13063 
+Dec 05 13:10:31.087 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R8 1 0 udp-e21253f7-d510-40d9-8d2c-fc1a4999a0c3 
+Dec 05 13:10:31.088 HYPERVISOR: exec_cmd: vm get_status R8 
+Dec 05 13:10:31.145 HYPERVISOR: exec_cmd: nio create_udp udp-0ca99c9f-5f64-43ad-b098-4b787b9456d6 13068 127.0.0.1 13069 
+Dec 05 13:10:31.149 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R8 1 1 udp-0ca99c9f-5f64-43ad-b098-4b787b9456d6 
+Dec 05 13:10:31.150 HYPERVISOR: exec_cmd: vm get_status R8 
+Dec 05 13:10:31.680 HYPERVISOR: exec_cmd: nio create_udp udp-ddc42e3c-2850-49a5-a488-7459c9d191ed 13098 127.0.0.1 13099 
+Dec 05 13:10:31.682 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R8 0 0 udp-ddc42e3c-2850-49a5-a488-7459c9d191ed 
+Dec 05 13:10:31.683 HYPERVISOR: exec_cmd: vm get_status R8 
+Dec 05 13:10:38.053 HYPERVISOR: exec_cmd: vm set_ghost_status R8 2 
+Dec 05 13:10:38.055 HYPERVISOR: exec_cmd: vm set_ghost_file R8 E:\bupt-homework\computer-network\RIP_OSPF\lab3\project-files\dynamips\c7200-adventerprisek9-mz.124-24.T5.image-512.ghost 
+Dec 05 13:10:38.056 HYPERVISOR: exec_cmd: vm get_status R8 
+Dec 05 13:10:38.095 HYPERVISOR: exec_cmd: vm set_config R8 configs\i8_startup-config.cfg 
+Dec 05 13:10:38.096 HYPERVISOR: exec_cmd: vm start R8 
+Dec 05 14:35:40.493 HYPERVISOR: exec_cmd: vm extract_config R8 

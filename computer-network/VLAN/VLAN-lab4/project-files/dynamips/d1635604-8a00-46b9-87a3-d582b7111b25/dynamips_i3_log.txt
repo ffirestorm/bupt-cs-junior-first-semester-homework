@@ -1,0 +1,22 @@
+Nov 20 09:03:58.235 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Nov 20 09:03:58.237 HYPERVISOR: Started on TCP port = 49998.
+Nov 20 09:03:58.740 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 20 09:03:58.741 HYPERVISOR: exec_cmd: hypervisor working_dir E:\bupt-homework\computer-network\VLAN\VLAN-lab4\project-files\dynamips 
+Nov 20 09:03:58.741 GENERAL: working_dir=E:\bupt-homework\computer-network\VLAN\VLAN-lab4\project-files\dynamips
+Nov 20 09:03:58.741 HYPERVISOR: exec_cmd: ethsw create Switch6 
+Nov 20 09:04:02.696 HYPERVISOR: exec_cmd: nio create_udp udp-cba2c04b-42a5-4c0b-8f76-10c78fa106e6 13016 192.168.177.1 13017 
+Nov 20 09:04:02.697 HYPERVISOR: exec_cmd: ethsw add_nio Switch6 udp-cba2c04b-42a5-4c0b-8f76-10c78fa106e6 
+Nov 20 09:04:02.726 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-cba2c04b-42a5-4c0b-8f76-10c78fa106e6 9 
+Nov 20 09:04:02.758 HYPERVISOR: exec_cmd: nio create_udp udp-cc9a740c-e40f-4d21-b9bd-a12c8de92201 13018 192.168.177.1 13019 
+Nov 20 09:04:02.758 HYPERVISOR: exec_cmd: ethsw add_nio Switch6 udp-cc9a740c-e40f-4d21-b9bd-a12c8de92201 
+Nov 20 09:04:02.788 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-cc9a740c-e40f-4d21-b9bd-a12c8de92201 10 
+Nov 20 09:04:02.820 HYPERVISOR: exec_cmd: nio create_udp udp-7df04382-197b-40f3-8c99-a1222bcdb4d7 13020 192.168.177.1 13021 
+Nov 20 09:04:02.820 HYPERVISOR: exec_cmd: ethsw add_nio Switch6 udp-7df04382-197b-40f3-8c99-a1222bcdb4d7 
+Nov 20 09:04:02.850 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-7df04382-197b-40f3-8c99-a1222bcdb4d7 11 
+Nov 20 09:04:03.878 HYPERVISOR: exec_cmd: nio create_udp udp-538accb7-b9d3-4ed4-a21c-b2463f60682f 13047 192.168.177.1 13046 
+Nov 20 09:04:03.879 HYPERVISOR: exec_cmd: ethsw add_nio Switch6 udp-538accb7-b9d3-4ed4-a21c-b2463f60682f 
+Nov 20 09:04:03.902 HYPERVISOR: exec_cmd: ethsw set_dot1q_port Switch6 udp-538accb7-b9d3-4ed4-a21c-b2463f60682f 9 
+Nov 20 11:19:14.633 HYPERVISOR: exec_cmd: ethsw delete Switch6 
+Nov 20 11:19:14.756 HYPERVISOR: exec_cmd: hypervisor stop 
+Nov 20 11:19:15.202 HYPERVISOR: Stopped.
+Nov 20 11:19:15.202 GENERAL: reset done.
